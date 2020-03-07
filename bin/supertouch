@@ -1,0 +1,51 @@
+#!/usr/bin/env perl
+
+use strict;
+use warnings;
+use lib::findbin '../lib'; # dev-only
+use App::supertouch;
+
+# PODNAME: supertouch
+# ABSTRACT: Touch with directories
+# VERSION
+
+=head1 SYNOPSIS
+
+ % supertouch foo/bar/baz.txt
+
+=head1 DESCRIPTION
+
+C<supertouch> is a command similar to C<touch>, except it creates the directories structure
+necessary if it doesn't already exist.
+
+=head1 OPTIONS
+
+=over 4
+
+=item -v
+
+Turn on verbose mode.
+
+=back
+
+=head1 SEE ALSO
+
+=over 4
+
+=item touch
+
+Unix command touch.
+
+=item L<File::Touch>
+
+Perl module for touching files.
+
+=item L<Path::Tiny>
+
+Perl path handling module which also provides an interface for touching files.
+
+=back
+
+=cut
+
+exit App::supertouch->main(@ARGV);
