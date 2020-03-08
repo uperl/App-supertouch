@@ -54,21 +54,38 @@ sub main
       print STDERR "'' (empty) is not a legal filename";
       return 2;
     }
-    my $file = path($arg);
-    if($file->is_dir)
+    if($arg =~ s{[\\/]$}{})
     {
-      print STDERR "$file is a directory";
-      return 2;
+      my $dir = path($arg);
+      if($dir->is_file)
+      {
+        print STDERR "$dir is a file";
+        return 2;
+      }
+      unless(-d $dir)
+      {
+        print "DIR  @{[ $dir ]}\n" if $verbose;
+        $dir->mkpath;
+      }
     }
-    unless(-d $file->parent)
+    else
     {
-      print "DIR  @{[ $file->parent ]}\n" if $verbose;
-      $file->parent->mkpath;
-    }
-    unless(-f $file)
-    {
-      print "FILE @{[ $file ]}\n" if $verbose;
-      $file->touch;
+      my $file = path($arg);
+      if($file->is_dir)
+      {
+        print STDERR "$file is a directory";
+        return 2;
+      }
+      unless(-d $file->parent)
+      {
+        print "DIR  @{[ $file->parent ]}\n" if $verbose;
+        $file->parent->mkpath;
+      }
+      unless(-f $file)
+      {
+        print "FILE @{[ $file ]}\n" if $verbose;
+        $file->touch;
+      }
     }
   }
 

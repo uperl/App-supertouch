@@ -20,4 +20,11 @@ subtest 'unix path' => sub {
   ok -f $path;
 };
 
+subtest 'dir' => sub {
+  my $path = path( $dir, 'xor', 'roger', 'ramjet', 'foo' );
+  note "+ supertouch @{[ $path->stringify ]}/";
+  App::supertouch->main( $path->stringify . "/");
+  ok -d $path;
+};
+
 done_testing;
