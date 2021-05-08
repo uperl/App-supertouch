@@ -1,4 +1,4 @@
-# supertouch ![linux](https://github.com/uperl/App-supertouch/workflows/linux/badge.svg)
+# supertouch ![linux](https://github.com/uperl/App-supertouch/workflows/linux/badge.svg) ![macos](https://github.com/uperl/App-supertouch/workflows/macos/badge.svg) ![windows](https://github.com/uperl/App-supertouch/workflows/windows/badge.svg) ![cygwin](https://github.com/uperl/App-supertouch/workflows/cygwin/badge.svg) ![msys2-mingw](https://github.com/uperl/App-supertouch/workflows/msys2-mingw/badge.svg)
 
 Touch with directories
 
