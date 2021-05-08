@@ -1,4 +1,4 @@
-# supertouch [![Build Status](https://secure.travis-ci.org/plicease/App-supertouch.png)](http://travis-ci.org/plicease/App-supertouch)
+# supertouch ![linux](https://github.com/uperl/App-supertouch/workflows/linux/badge.svg)
 
 Touch with directories
 
